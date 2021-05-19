@@ -5168,7 +5168,7 @@ GameObject:
   - component: {fileID: 8445991250528881301}
   - component: {fileID: 4799126218297034032}
   - component: {fileID: 7313032807130542586}
-  - component: {fileID: 8635247009010245549}
+  - component: {fileID: 7055477929282409211}
   m_Layer: 0
   m_Name: Basic Lantern
   m_TagString: Untagged
@@ -5241,7 +5241,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8635247009010245549
+--- !u!114 &7055477929282409211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5250,13 +5250,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 9114688506787303471}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63d2ff725f5af3e4687af2c8e314abc0, type: 3}
+  m_Script: {fileID: 11500000, guid: 5338d1a339b42b844be63e18e0f0624f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _lanternLight: {fileID: 8679473645236677780}
-  _lightIntensity: 10
-  _noiseRange: 5
-  _trasientDuration: 0.5
-  _unselected: {r: 0.9622642, g: 0.8279076, b: 0.5301531, a: 0}
-  _unavailable: {r: 1, g: 0.02264148, b: 0.02264148, a: 0}
-  _hovering: {r: 0.7117369, g: 0.9811321, b: 0.4017088, a: 0}
+  _averageIntensity: 2.69
+  _noiseRange: 0.5
+  _flickerSpeed: 1
+  _normalColor: {r: 0.9528302, g: 0.9528302, b: 0.9528302, a: 1}
+  _hoveringColor: {r: 0.57916516, g: 0.8962264, b: 0.583999, a: 1}
+  _unavailableColor: {r: 0.990566, g: 0, b: 0, a: 1}
+  _turnedOn: 0
