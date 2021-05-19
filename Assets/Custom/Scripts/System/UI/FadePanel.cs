@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class FadePanel : MonoBehaviour
 {
     private Rigidbody _rb;
-    private CanvasGroup _fadePanel;
+    private Image _fadePanel;
 
     private float _alphaFade;
     private float _alphaStart;
@@ -25,9 +25,10 @@ public class FadePanel : MonoBehaviour
 
     private void Awake()
     {
-        _fadePanel = GetComponent<CanvasGroup>();
-        _fadePanel.alpha = _alphaValue;
-        _alphaFade = _fadePanel.alpha;
+        _fadePanel = GetComponent<Image>();
+        _alphaFade = _alphaValue;
+        SetAlpha();
+        _alphaFade = _fadePanel.color.a;
         _alphaStart = _alphaFade;
         _timer = 0f;
         if (_alphaFade == 0)
@@ -35,12 +36,6 @@ public class FadePanel : MonoBehaviour
             _fade = false;
             _direction = true;
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
     }
 
     // Update is called once per frame
@@ -52,7 +47,7 @@ public class FadePanel : MonoBehaviour
             if (_direction) // fade In
             {
                 _alphaFade = Mathf.Lerp(_alphaStart, 0, _timer / _fadeTime);
-                _fadePanel.alpha = _alphaFade;
+                SetAlpha();
                 if (_timer / _fadeTime >= 1f)
                 {
                     _direction = !_direction;
@@ -63,7 +58,7 @@ public class FadePanel : MonoBehaviour
             else //fade out
             {
                 _alphaFade = Mathf.Lerp(_alphaStart, 1, _timer / _fadeTime);
-                _fadePanel.alpha = _alphaFade;
+                SetAlpha();
                 if (_timer / _fadeTime > 1)
                 {
                     _direction = !_direction;
@@ -82,6 +77,8 @@ public class FadePanel : MonoBehaviour
 
     public void SetAlpha()
     {
-
+        var color = _fadePanel.color;
+        color.a = _alphaFade;
+        _fadePanel.color = color;
     }
 }
