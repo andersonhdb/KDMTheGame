@@ -6,15 +6,15 @@ using UnityEngine;
 public class MonsterStats : ScriptableObject
 {
     [SerializeField]
-    private int _toughness;
+    private int _toughness = 6;
     public int Toughness => _toughness;
-    
+
     [SerializeField]
-    private int _movement;
+    private int _movement = 6;
     public int Movement => _movement;
-    
+
     //Tokens:
-    
+
 
 
     //functions
