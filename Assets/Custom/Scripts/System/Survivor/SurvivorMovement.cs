@@ -36,11 +36,11 @@ public class SurvivorMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _anim.SetFloat("speed", _rb.velocity.magnitude);
         if (!Input.anyKey)
         {
             _rb.velocity = Vector3.zero;
         }
+        _anim.SetFloat("ySpeed", _rb.velocity.magnitude);
     }
 
     public void MoveForward()
