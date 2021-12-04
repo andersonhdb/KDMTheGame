@@ -7,6 +7,7 @@ public class SurvivorMovement : MonoBehaviour
     [SerializeField]
     private Lantern _survivorLantern;
     private int _maxMovement = 5;
+    [SerializeField]
     private float _currentMovement;
 
     [SerializeField]

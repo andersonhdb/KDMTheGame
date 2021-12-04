@@ -48,6 +48,7 @@ public class SelectCharacterState : ShowdownState
         if (_survivorCanGo[survivorIndex])
         {
             _survivors[survivorIndex].GetLantern().NormalLight();
+            _survivors[survivorIndex].GetLantern().SetRange(_survivors[survivorIndex].GetMaxMovement());
             _nextState.SetSurvivor(_survivors[survivorIndex]);
             _cam.TransitionTo(survivorIndex + 1);
             ShowDownStateRunner.ToState<MovingSurvivorState>();
